@@ -1,0 +1,15 @@
+﻿doctype html
+html(lang='en')
+    head
+        title= title
+        link(rel="stylesheet" href='../../stylesheets/bootstrap.css')
+        link(rel='stylesheet' href='../../stylesheets/main.css')
+        script(defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand(href='/') Store Contacts
+            a.btn.btn-success.my-2.my-sm-0(href='#' role='button') Login
+        block content
+
+        include includes/scripts

@@ -1,0 +1,145 @@
+﻿extends layout
+
+block content
+    each store in stores
+        div#search
+            div.row
+                div.col
+                    a(href='/')
+                        h3.text-center
+                            i.far.fa-arrow-alt-circle-left
+                div.col
+                    a(href='#')
+                        h3.text-center
+                            | District: #{store.storeDM.districtNumber}
+                div.col
+                    h2.text-center
+                        | Store #{store.storeNumber} Info
+                div.col
+                    a(href='#')
+                        h3.text-center
+                            | Region: #{store.storeRM.regionNumber}
+                div.col
+                    ul.list-inline
+                        li.list-inline-item
+                            a(href='/stores/' + store.storeNumber + '/edit')
+                                h3.text-center
+                                    i.fa.fa-edit
+                        li.list-inline-item
+                            a(href='#')
+                                h3.text-center
+                                    i.fa.fa-cog
+            
+
+
+        hr
+        div#content
+            div.row.row-with-margin
+                dt.col-sm-1.text-right
+                    a(href='mailto:mgr' + store.storeNumber + '@FHWWW3.ORSCHELN.COM')
+                        i.fas.fa-user
+                dd.col-sm-7
+                    a(href='mailto:mgr' + store.storeNumber + '@FHWWW3.ORSCHELN.COM')
+                        | #{store.storeContact.firstName} #{store.storeContact.lastName}
+                dd.col-sm-3.text-right                    
+                    span Nursery  
+                    i.fas.fa-seedling
+                dd.col-sm-1
+                    if store.nursery
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dt.col-sm-1.text-right
+                    a(href='https://www.orschelnfarmhome.com/locatestore/index/locators/?region=&city=&store-zipcode=' + store.storeContact.zip target='_blank')
+                        i.fas.fa-map-marker
+                dd.col-sm-7
+                    a(href='https://www.orschelnfarmhome.com/locatestore/index/locators/?region=&city=&store-zipcode=' + store.storeContact.zip target='_blank')
+                        | #{store.storeContact.streetAddress}
+                        br
+                        | #{store.storeContact.city}, #{store.storeContact.state} #{store.storeContact.zip}
+                dd.col-sm-3.text-right                    
+                    span Pet Wash Station  
+                    i.fas.fa-dog
+                dd.col-sm-1
+                    if store.petWashStation
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dt.col-sm-1.text-right
+                    a(href='mailto:store' + store.storeNumber + '@FHWWW3.ORSCHELN.COM')
+                        i.fas.fa-envelope-open-text
+                dd.col-sm-6
+                    a(href='mailto:store' + store.storeNumber + '@FHWWW3.ORSCHELN.COM')
+                        | Store Email
+                dd.col-sm-4.text-right                    
+                    span Small Engine Shop  
+                    i.fas.fa-oil-can
+                dd.col-sm-1
+                    if store.smallengine
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dt.col-sm-1.text-right
+                    a(href='#')
+                        i.fas.fa-phone
+                dd.col-sm-7
+                    | #{store.storeContact.phoneNumber}
+                    br
+                    | Ext: 7#{store.storeNumber}
+                dd.col-sm-3.text-right                    
+                    span Books  
+                    i.fas.fa-book-open
+                dd.col-sm-1
+                    if store.books
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dt.col-sm-1.text-right
+                    a(href='#')
+                        i.fas.fa-fax
+                dd.col-sm-7
+                    | #{store.storeContact.faxNumber}
+                dd.col-sm-3.text-right
+                    span Fishing  
+                    i.fas.fa-fish                    
+                dd.col-sm-1
+                    if store.fishing
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dd.col-sm-1.text-right
+                    i.fas.fa-store
+                dd.col-sm-7.text-left
+                    | Store Size: #{store.size}
+                dd.col-sm-3.text-right
+                    span Fishing and Guns  
+                    i.fas.fa-hiking
+                dd.col-sm-1
+                    if store.fishingAndGuns
+                        i.far.fa-check-square
+                    else
+                        i.far.fa-square
+
+
+            div.row.row-with-margin
+                dd.col-sm-8
+                dd.col-sm-3.text-right                    
+                    span Pet Food Size  
+                    i.fas.fa-paw
+                dd.col-sm-1
+                    | #{store.petSize}

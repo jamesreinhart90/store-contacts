@@ -1,0 +1,27 @@
+﻿extends layout
+
+block content
+    div#search
+        form
+            div.form-row
+                div.form-group.col-md-1
+                div.form-group.col-md-2
+                    label(for='store') Store
+                    input.form-control#store(type='number' name='store' placeholder='Store Number' min='1' max='300' onkeyup='searchStore(this.value);' onchange='searchStore(this.value);' )
+                    h4.hidden#storeError
+                div.form-group.col-md-2
+                div.form-group.col-md-2
+                    label(for='district') District
+                    select.form-control#district(name='district' onchange='searchDistrict(this.value)')
+                        option(disabled selected value) Select District
+                        each district in districts
+                            option(value=district.districtManagerID) #{district.districtNumber} - #{district.Contact.firstName} #{district.Contact.lastName}
+                div.form-group.col-md-2
+                div.form-group.col-md-2
+                    label(for='region') Region
+                    select.form-control#region(name='region' onchange='searchRegion(this.value)')
+                        option(disabled selected value) Select Region
+                        each region in regions
+                            option(value=region.regionManagerID) #{region.regionNumber} - #{region.Contact.firstName} #{region.Contact.lastName}
+    hr
+    div#table

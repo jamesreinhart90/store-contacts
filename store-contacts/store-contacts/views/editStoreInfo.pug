@@ -1,0 +1,175 @@
+﻿extends layout
+
+block content
+    each store in stores
+        div#search
+            form(action='/stores/' + store.storeNumber + '/edit' method='POST')
+                div.row
+                    div.col
+                        p.text-right
+                            button(style={color: 'red', width:'40px', height:'40px', background: 'none', border: 'none', padding: '0'} onclick='goBack()')
+                                span.fas.fa-times(style={width:'100%', height:'100%'} )
+                    div.col
+                        div.row.text-center
+                            div.col-sm-5
+                                h3
+                                    | District:
+                            div.col-sm-4
+                                input.form-control(type='text' name='districtNumber' value=store.storeDM.districtNumber)
+                    div.col-sm-3
+                        h2
+                            | Edit Store #{store.storeNumber} Info
+                    div.col
+                        div.row.text-center
+                            div.col-sm-5
+                                h3.text-center
+                                    | Region:
+                            div.col-sm-4
+                                input.form-control(type='text' name='regionNumber' value=store.storeRM.regionNumber)
+                    div.col
+                        ul.list-inline
+                            li.list-inline-item
+                                button.text-left(type='submit' style={width:'40px', height:'40px', background: 'none', border: 'none', padding: '0'} )
+                                    span.far.fa-save(style={width:'100%', height:'100%'} )
+            
+
+
+                hr
+                div#content
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right.col-form-label
+                            i.fas.fa-user
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | First Name:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='firstName' value=store.storeContact.firstName)
+                            div.row
+                                div.col-sm-4
+                                    | Last Name:
+                                div.col-sm-6
+                                    input.form-control(type-'text' name='lastName' value=store.storeContact.lastName)
+                        dd.col-sm-3.text-right                    
+                            span Nursery  
+                            i.fas.fa-seedling
+                        dd.col-sm-1.text-center
+                            if store.nursery
+                                input.form-check-input(type='checkbox' name='nursery' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='nursery' style={width:'20px', height:'20px'} )
+
+
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right.col-form-label
+                            i.fas.fa-map-marker
+                        dd.col-sm-6
+                            div.row
+                                | Street Address:
+                                input.form-control(type='text' name='streetAddress' value=store.storeContact.streetAddress)
+                        dd.col-sm-1
+                        dd.col-sm-3.text-right                    
+                            span Pet Wash Station  
+                            i.fas.fa-dog
+                        dd.col-sm-1.text-center
+                            if store.petWashStation
+                                input.form-check-input(type='checkbox' name='petWashStation' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='petWashStation' style={width:'20px', height:'20px'} )
+
+
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | City:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='city' value=store.storeContact.city) 
+                        dd.col-sm-3.text-right                    
+                            span Small Engine  
+                            i.fas.fa-oil-can
+                        dd.col-sm-1.text-center
+                            if store.smallengine
+                                input.form-check-input(type='checkbox' name='smallEngine' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='smallEngine' style={width:'20px', height:'20px'} )
+
+
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | State:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='state' value=store.storeContact.state)
+                        dd.col-sm-3.text-right                    
+                            span Books  
+                            i.fas.fa-book-open
+                        dd.col-sm-1.text-center
+                            if store.books
+                                input.form-check-input(type='checkbox' name='books' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='books' style={width:'20px', height:'20px'} )
+
+
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | Zipzode:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='zip' value=store.storeContact.zip)
+                        dd.col-sm-3.text-right
+                            span Fishing  
+                            i.fas.fa-fish                    
+                        dd.col-sm-1.text-center
+                            if store.fishing
+                                input.form-check-input(type='checkbox' name='fishing' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='fishing' style={width:'20px', height:'20px'} )
+
+                    div.row.row-with-margin
+                        dt.col-sm-1.text-right.col-form-label
+                            i.fas.fa-phone
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | Store Phone Number:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='phoneNumber' value=store.storeContact.phoneNumber)
+                        dd.col-sm-3.text-right
+                            span Fishing and Guns  
+                            i.fas.fa-hiking
+                        dd.col-sm-1.text-center
+                            if store.fishingAndGuns
+                                input.form-check-input(type='checkbox' name='fishingAndGuns' checked style={width:'20px', height:'20px'} )
+                            else
+                                input.form-check-input(type='checkbox' name='fishingAndGuns' style={width:'20px', height:'20px'} )
+
+
+                    div.row.row-with-margin
+                        dd.col-sm-1.text-right.col-form-label
+                            i.fas.fa-fax
+                        dd.col-sm-7
+                            div.row
+                                div.col-sm-4
+                                    | Store Fax Number:
+                                div.col-sm-6
+                                    input.form-control(type='text' name='faxNumber' value=store.storeContact.faxNumber)
+                        dd.col-sm-3.text-right
+                            span Store Size  
+                            i.fas.fa-store
+                        dd.col-sm-1
+                            input.form-control(type='text' name='size' value=store.size)
+
+
+                    div.row.row-with-margin
+                        dd.col-sm-8
+                        dd.col-sm-3.text-right                    
+                            span Pet Food Size  
+                            i.fas.fa-paw
+                        dd.col-sm-1
+                            input.form-control(type='text' name='petSize' value=store.petSize)

@@ -1,0 +1,66 @@
+﻿a {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+body {
+    font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding-top: 50px;
+}
+
+#content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container-fluid {
+    background-color: rgba(255, 216, 0, .25);
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding: 1%;
+    text-align: center;
+    width: 100%;
+}
+
+.container-fluid:hover {
+    background-color: rgba(255, 216, 100, .5);
+}
+
+hr {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom: 1px solid;
+}
+
+i {
+    font-size: 30px;
+}
+
+.row-with-margin {
+    margin-top: 25px;
+}
+
+#search {
+    background-color: white;
+    height: 15%;
+    margin: 35px;
+}
+
+#storeError {
+    color: red;
+}
+
+#table {
+    border: 3px solid;
+    height: 60vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
