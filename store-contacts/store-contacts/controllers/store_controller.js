@@ -48,6 +48,15 @@ router.editStoreInfoPost = function (req, res) {
     let districtInfo = {};
     let regionInfo = {};
 
+
+    contactInfo.firstName = req.body.firstName;
+    contactInfo.lastName = req.body.lastName;
+    contactInfo.streetAddress = req.body.streetAddress;
+    contactInfo.city = req.body.city;
+    contactInfo.state = req.body.state;
+    contactInfo.zip = req.body.zip;
+
+
     console.log(req);
 };
 
