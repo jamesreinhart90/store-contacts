@@ -45,7 +45,7 @@ block content
                     span Nursery  
                     i.fas.fa-seedling
                 dd.col-sm-1
-                    if store.nursery
+                    if store.nursery && store.nursery == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square
@@ -64,7 +64,7 @@ block content
                     span Pet Wash Station  
                     i.fas.fa-dog
                 dd.col-sm-1
-                    if store.petWashStation
+                    if store.petWashStation && store.petWashStation == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square
@@ -81,7 +81,7 @@ block content
                     span Small Engine Shop  
                     i.fas.fa-oil-can
                 dd.col-sm-1
-                    if store.smallengine
+                    if store.smallengine && store.smallengine == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square
@@ -89,8 +89,7 @@ block content
 
             div.row.row-with-margin
                 dt.col-sm-1.text-right
-                    a(href='#')
-                        i.fas.fa-phone
+                    i.fas.fa-phone
                 dd.col-sm-7
                     | #{store.storeContact.phoneNumber}
                     br
@@ -99,7 +98,7 @@ block content
                     span Books  
                     i.fas.fa-book-open
                 dd.col-sm-1
-                    if store.books
+                    if store.books && store.books == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square
@@ -107,15 +106,14 @@ block content
 
             div.row.row-with-margin
                 dt.col-sm-1.text-right
-                    a(href='#')
-                        i.fas.fa-fax
+                    i.fas.fa-fax
                 dd.col-sm-7
                     | #{store.storeContact.faxNumber}
                 dd.col-sm-3.text-right
                     span Fishing  
                     i.fas.fa-fish                    
                 dd.col-sm-1
-                    if store.fishing
+                    if store.fishing && store.fishing == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square
@@ -130,7 +128,7 @@ block content
                     span Fishing and Guns  
                     i.fas.fa-hiking
                 dd.col-sm-1
-                    if store.fishingAndGuns
+                    if store.fishingAndGuns && store.fishingAndGuns == 1
                         i.far.fa-check-square
                     else
                         i.far.fa-square

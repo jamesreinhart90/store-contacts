@@ -34,6 +34,9 @@
                         return '(' + match[1] + ') ' + match[2] + '-' + match[3];
                     }
                     return '';
+                },
+                set(val) {
+                    this.setDataValue('phoneNumber', val.replace(/\D/g, ''));
                 }
             },
             faxNumber: {
@@ -45,13 +48,15 @@
                         return '(' + match[1] + ') ' + match[2] + '-' + match[3];
                     }
                     return '';
+                },
+                set(val) {
+                    this.setDataValue('phoneNumber', val.replace(/\D/g, ''));
                 }
             },
             streetAddress: Sequelize.STRING(50),
             city: Sequelize.STRING(50),
             state: Sequelize.STRING(2),
-            zip: Sequelize.STRING(9)
-        
+            zip: Sequelize.STRING(9)        
         },
         {
             name: {
